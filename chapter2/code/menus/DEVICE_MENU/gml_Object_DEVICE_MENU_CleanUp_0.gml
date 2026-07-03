@@ -1,0 +1,1 @@
+scr_bettersaves_menu_cleanup();

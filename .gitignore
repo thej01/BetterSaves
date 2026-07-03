@@ -1,0 +1,12 @@
+# Ignore shortcuts
+*.lnk
+
+# Ignore gamemaker data files
+*.win
+
+# UTMT Project backups (data files...)
+**/.modbackup/
+
+# XDelta patch files
+# While not piracy, these would just clog up space lol.
+*.xdelta
