@@ -6,6 +6,23 @@ function scr_get_cliff_items()
     {
         var chapter = i + 1;
         var boss_result = scr_get_ura_value(chapter, scr_bettersaves_file_struct(global.filechoice, false, chapter));
+
+        if (chapter == 4 && boss_result == 1)
+        {
+            boss_result = scr_get_secret_boss_result(chapter);
+            
+            if (boss_result == 0 && scr_completed_chapter(4))
+            {
+                var prev_flag = scr_get_chapter_flag(4, global.filechoice, scr_get_secret_boss_flag(4));
+                boss_result = prev_flag;
+            }
+            
+            if (boss_result == 1)
+                boss_result = 2;
+            
+            scr_set_ura_value(chapter, scr_bettersaves_file_struct(global.filechoice, false, chapter), boss_result);
+            scr_set_ini_value(chapter, global.filechoice, "UraBoss", boss_result, false);
+        }
         
         if (boss_result > 0)
         {
@@ -87,6 +104,7 @@ function scr_get_boss_item_id(arg0, arg1)
             break;
         
         case 4:
+            _item_type = "weapon";
             _item_id = 52;
             break;
         

@@ -121,7 +121,7 @@ function scr_get_secret_boss_flag(arg0)
             break;
         
         case 4:
-            fought_flag = 1629;
+            fought_flag = 852;
             break;
 
         case 5:
@@ -210,6 +210,271 @@ function scr_set_ura_value(chapter, file_struct, result)
     var _ini_value = ini_write_real("URA", scr_bettersaves_ura(file_struct, chapter), result);
     ossafe_ini_close();
     return _ini_value;
+}
+
+function scr_get_chapter_flag(chapter, slot, flag)
+{
+    var flag_value = 0;
+    var file_name = scr_bettersaves_get_saveprocess_file((slot + 3), global.bettersaves_save_types.completion, chapter);
+    
+    if (ossafe_file_exists(file_name))
+    {
+        var file = file_name;
+        var myfileid = ossafe_file_text_open_read(file);
+        ossafe_file_text_read_string(myfileid);
+        ossafe_file_text_readln(myfileid);
+        
+        if (!global.is_console)
+        {
+            for (var i = 0; i < 6; i += 1)
+            {
+                ossafe_file_text_read_string(myfileid);
+                ossafe_file_text_readln(myfileid);
+            }
+        }
+        else
+        {
+            var othername_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(othername_list);
+            ossafe_file_text_readln(myfileid);
+        }
+        
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        
+        if (global.is_console)
+        {
+            var hp_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(hp_list);
+            ossafe_file_text_readln(myfileid);
+            var maxhp_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(maxhp_list);
+            ossafe_file_text_readln(myfileid);
+            var at_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(at_list);
+            ossafe_file_text_readln(myfileid);
+            var df_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(df_list);
+            ossafe_file_text_readln(myfileid);
+            var mag_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(mag_list);
+            ossafe_file_text_readln(myfileid);
+            var guts_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(guts_list);
+            ossafe_file_text_readln(myfileid);
+            var charweapon_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(charweapon_list);
+            ossafe_file_text_readln(myfileid);
+            var chararmor1_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(chararmor1_list);
+            ossafe_file_text_readln(myfileid);
+            var chararmor2_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(chararmor2_list);
+            ossafe_file_text_readln(myfileid);
+            var weaponstyle_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(weaponstyle_list);
+            ossafe_file_text_readln(myfileid);
+        }
+        
+        for (var i = 0; i < 5; i += 1)
+        {
+            if (!global.is_console)
+            {
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+            }
+            
+            for (var q = 0; q < 4; q += 1)
+            {
+                ossafe_file_text_read_real(myfileid);
+                ossafe_file_text_readln(myfileid);
+                ossafe_file_text_read_real(myfileid);
+                ossafe_file_text_readln(myfileid);
+                ossafe_file_text_read_real(myfileid);
+                ossafe_file_text_readln(myfileid);
+                ossafe_file_text_read_real(myfileid);
+                ossafe_file_text_readln(myfileid);
+                ossafe_file_text_read_real(myfileid);
+                ossafe_file_text_readln(myfileid);
+                ossafe_file_text_read_real(myfileid);
+                ossafe_file_text_readln(myfileid);
+                ossafe_file_text_read_real(myfileid);
+                ossafe_file_text_readln(myfileid);
+                ossafe_file_text_read_real(myfileid);
+                ossafe_file_text_readln(myfileid);
+                ossafe_file_text_read_real(myfileid);
+                ossafe_file_text_readln(myfileid);
+                ossafe_file_text_read_real(myfileid);
+                ossafe_file_text_readln(myfileid);
+            }
+            
+            for (var j = 0; j < 12; j += 1)
+            {
+                ossafe_file_text_read_real(myfileid);
+                ossafe_file_text_readln(myfileid);
+            }
+        }
+        
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        
+        if (global.is_console)
+        {
+            var item_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(item_list);
+            ossafe_file_text_readln(myfileid);
+            var keyitem_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(keyitem_list);
+            ossafe_file_text_readln(myfileid);
+            var weapon_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(weapon_list);
+            ossafe_file_text_readln(myfileid);
+            var armor_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(armor_list);
+            ossafe_file_text_readln(myfileid);
+            var pocket_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(pocket_list);
+            ossafe_file_text_readln(myfileid);
+        }
+        else
+        {
+            for (var j = 0; j < 13; j += 1)
+            {
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+            }
+            
+            for (var j = 0; j < 48; j += 1)
+            {
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+            }
+            
+            for (var j = 0; j < 72; j += 1)
+            {
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+            }
+        }
+        
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        ossafe_file_text_read_real(myfileid);
+        ossafe_file_text_readln(myfileid);
+        
+        if (global.is_console)
+        {
+            var litem_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(litem_list);
+            ossafe_file_text_readln(myfileid);
+            var phone_list = scr_ds_list_read(myfileid);
+            ds_list_destroy(phone_list);
+            ossafe_file_text_readln(myfileid);
+            var flag_list = scr_ds_list_read(myfileid);
+            flag_value = ds_list_find_value(flag_list, flag);
+            
+            for (var i = 0; i < (flag + 1); i += 1)
+            {
+                if (i == flag)
+                    flag_value = ds_list_find_value(flag_list, i);
+            }
+            
+            ds_list_destroy(flag_list);
+            ossafe_file_text_readln(myfileid);
+        }
+        else
+        {
+            for (var i = 0; i < 8; i += 1)
+            {
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+                file_text_read_real(myfileid);
+                file_text_readln(myfileid);
+            }
+            
+            for (var i = 0; i < (flag + 1); i += 1)
+            {
+                if (i == flag)
+                {
+                    flag_value = file_text_read_real(myfileid);
+                    file_text_readln(myfileid);
+                }
+                else
+                {
+                    file_text_read_real(myfileid);
+                    file_text_readln(myfileid);
+                }
+            }
+        }
+        
+        ossafe_file_text_close(myfileid);
+    }
+    
+    return flag_value;
 }
 
 function scr_store_ura_result(chapter, file_struct, arg2)
