@@ -7,6 +7,11 @@
 # UTMT Project backups (data files...)
 **/.modbackup/
 
+# Mod export folder
+**/export/
+**/.export/
+**/_export/
+
 # XDelta patch files
 # While not piracy, these would just clog up space lol.
 *.xdelta
