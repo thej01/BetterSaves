@@ -4,6 +4,7 @@ function scr_bettersaves_init()
     if (!variable_global_exists("chapter"))
     {
         global.bettersaves_is_chapter_select = true;
+        // scary
         global.chapter = 0;
     }
     
@@ -13,8 +14,8 @@ function scr_bettersaves_init()
     msg = "as it contains source code files with my... comments, etc."
     msg = "which may or may not be better for your use cases."
 
-    global.bettersaves_mod_version = 6
-    global.bettersaves_mod_verstring = "v6"
+    global.bettersaves_mod_version = 7
+    global.bettersaves_mod_verstring = "v7"
 
     global.bettersaves_debug = false
 
