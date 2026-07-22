@@ -13,7 +13,7 @@ function scr_load(type = global.bettersaves_save_types.normal)
     {
         var othername_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(othername_list); i += 1)
+        for (var i = 0; i < ds_list_size(othername_list); i += 1)
             global.othername[i] = ds_list_find_value(othername_list, i);
         
         ds_list_destroy(othername_list);
@@ -21,7 +21,7 @@ function scr_load(type = global.bettersaves_save_types.normal)
     }
     else
     {
-        for (i = 0; i < 6; i += 1)
+        for (var i = 0; i < 6; i += 1)
         {
             global.othername[i] = ossafe_file_text_read_string(myfileid);
             ossafe_file_text_readln(myfileid);
@@ -51,77 +51,77 @@ function scr_load(type = global.bettersaves_save_types.normal)
     {
         var hp_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(hp_list); i += 1)
+        for (var i = 0; i < ds_list_size(hp_list); i += 1)
             global.hp[i] = ds_list_find_value(hp_list, i);
         
         ds_list_destroy(hp_list);
         ossafe_file_text_readln(myfileid);
         var maxhp_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(maxhp_list); i += 1)
+        for (var i = 0; i < ds_list_size(maxhp_list); i += 1)
             global.maxhp[i] = ds_list_find_value(maxhp_list, i);
         
         ds_list_destroy(maxhp_list);
         ossafe_file_text_readln(myfileid);
         var at_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(at_list); i += 1)
+        for (var i = 0; i < ds_list_size(at_list); i += 1)
             global.at[i] = ds_list_find_value(at_list, i);
         
         ds_list_destroy(at_list);
         ossafe_file_text_readln(myfileid);
         var df_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(df_list); i += 1)
+        for (var i = 0; i < ds_list_size(df_list); i += 1)
             global.df[i] = ds_list_find_value(df_list, i);
         
         ds_list_destroy(df_list);
         ossafe_file_text_readln(myfileid);
         var mag_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(mag_list); i += 1)
+        for (var i = 0; i < ds_list_size(mag_list); i += 1)
             global.mag[i] = ds_list_find_value(mag_list, i);
         
         ds_list_destroy(mag_list);
         ossafe_file_text_readln(myfileid);
         var guts_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(guts_list); i += 1)
+        for (var i = 0; i < ds_list_size(guts_list); i += 1)
             global.guts[i] = ds_list_find_value(guts_list, i);
         
         ds_list_destroy(guts_list);
         ossafe_file_text_readln(myfileid);
         var charweapon_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(charweapon_list); i += 1)
+        for (var i = 0; i < ds_list_size(charweapon_list); i += 1)
             global.charweapon[i] = ds_list_find_value(charweapon_list, i);
         
         ds_list_destroy(charweapon_list);
         ossafe_file_text_readln(myfileid);
         var chararmor1_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(chararmor1_list); i += 1)
+        for (var i = 0; i < ds_list_size(chararmor1_list); i += 1)
             global.chararmor1[i] = ds_list_find_value(chararmor1_list, i);
         
         ds_list_destroy(chararmor1_list);
         ossafe_file_text_readln(myfileid);
         var chararmor2_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(chararmor2_list); i += 1)
+        for (var i = 0; i < ds_list_size(chararmor2_list); i += 1)
             global.chararmor2[i] = ds_list_find_value(chararmor2_list, i);
         
         ds_list_destroy(chararmor2_list);
         ossafe_file_text_readln(myfileid);
         var weaponstyle_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(weaponstyle_list); i += 1)
+        for (var i = 0; i < ds_list_size(weaponstyle_list); i += 1)
             global.weaponstyle[i] = ds_list_find_value(weaponstyle_list, i);
         
         ds_list_destroy(weaponstyle_list);
         ossafe_file_text_readln(myfileid);
     }
     
-    for (i = 0; i < 5; i += 1)
+    for (var i = 0; i < 5; i += 1)
     {
         if (!global.is_console)
         {
@@ -189,35 +189,35 @@ function scr_load(type = global.bettersaves_save_types.normal)
     {
         var item_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(item_list); i += 1)
+        for (var i = 0; i < ds_list_size(item_list); i += 1)
             global.item[i] = ds_list_find_value(item_list, i);
         
         ds_list_destroy(item_list);
         ossafe_file_text_readln(myfileid);
         var keyitem_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(keyitem_list); i += 1)
+        for (var i = 0; i < ds_list_size(keyitem_list); i += 1)
             global.keyitem[i] = ds_list_find_value(keyitem_list, i);
         
         ds_list_destroy(keyitem_list);
         ossafe_file_text_readln(myfileid);
         var weapon_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(weapon_list); i += 1)
+        for (var i = 0; i < ds_list_size(weapon_list); i += 1)
             global.weapon[i] = ds_list_find_value(weapon_list, i);
         
         ds_list_destroy(weapon_list);
         ossafe_file_text_readln(myfileid);
         var armor_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(armor_list); i += 1)
+        for (var i = 0; i < ds_list_size(armor_list); i += 1)
             global.armor[i] = ds_list_find_value(armor_list, i);
         
         ds_list_destroy(armor_list);
         ossafe_file_text_readln(myfileid);
         var pocket_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < ds_list_size(pocket_list); i += 1)
+        for (var i = 0; i < ds_list_size(pocket_list); i += 1)
             global.pocketitem[i] = ds_list_find_value(pocket_list, i);
         
         ds_list_destroy(pocket_list);
@@ -279,21 +279,21 @@ function scr_load(type = global.bettersaves_save_types.normal)
     {
         var litem_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < (ds_list_size(litem_list) - 1); i += 1)
+        for (var i = 0; i < (ds_list_size(litem_list) - 1); i += 1)
             global.litem[i] = ds_list_find_value(litem_list, i);
         
         ds_list_destroy(litem_list);
         ossafe_file_text_readln(myfileid);
         var phone_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < (ds_list_size(phone_list) - 1); i += 1)
+        for (var i = 0; i < (ds_list_size(phone_list) - 1); i += 1)
             global.phone[i] = ds_list_find_value(phone_list, i);
         
         ds_list_destroy(phone_list);
         ossafe_file_text_readln(myfileid);
         var flag_list = scr_ds_list_read(myfileid);
         
-        for (i = 0; i < (ds_list_size(flag_list) - 1); i += 1)
+        for (var i = 0; i < (ds_list_size(flag_list) - 1); i += 1)
             global.flag[i] = ds_list_find_value(flag_list, i);
         
         ds_list_destroy(flag_list);
@@ -301,7 +301,7 @@ function scr_load(type = global.bettersaves_save_types.normal)
     }
     else
     {
-        for (i = 0; i < 8; i += 1)
+        for (var i = 0; i < 8; i += 1)
         {
             global.litem[i] = ossafe_file_text_read_real(myfileid);
             ossafe_file_text_readln(myfileid);
@@ -309,11 +309,17 @@ function scr_load(type = global.bettersaves_save_types.normal)
             ossafe_file_text_readln(myfileid);
         }
         
-        for (i = 0; i < 2500; i += 1)
+        for (var i = 0; i < 2500; i += 1)
         {
             global.flag[i] = ossafe_file_text_read_real(myfileid);
             ossafe_file_text_readln(myfileid);
         }
+    }
+
+    if (global.flag[1569] == 1 && global.flag[1915] == 0)
+    {
+        global.flag[1915] = 1;
+        global.mag[2] += 4;
     }
     
     global.plot = ossafe_file_text_read_real(myfileid);
@@ -338,6 +344,23 @@ function scr_load(type = global.bettersaves_save_types.normal)
         
         global.currentroom = room_id;
     }
+
+    var adjusted_list = [];
+    
+    for (var i = 0; i < array_length(global.item); i += 1)
+    {
+        if (global.item[i] == 0 || global.item[i] >= 999)
+            continue;
+        
+        adjusted_list[array_length(adjusted_list)] = global.item[i];
+    }
+    
+    for (var i = 0; i < array_length(global.item); i += 1)
+        global.item[i] = 0;
+    
+    for (var i = 0; i < array_length(adjusted_list); i += 1)
+        global.item[i] = adjusted_list[i];
+    
     
     __loadedroom = scr_get_room_by_id(global.currentroom);
     
