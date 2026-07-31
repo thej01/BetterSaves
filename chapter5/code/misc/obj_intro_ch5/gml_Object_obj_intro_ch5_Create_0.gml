@@ -75,7 +75,7 @@ bigSparkleStep = function()
     speed = main_alpha * 0.25;
 };
 
-bigSparkles = findspriteinfo_all(2350);
+bigSparkles = findspriteinfo_all(spr_bigshoujosparkle);
 
 for (var i = 0; i < array_length(bigSparkles); i++)
 {

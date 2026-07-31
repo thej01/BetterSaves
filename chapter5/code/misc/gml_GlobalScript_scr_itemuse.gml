@@ -105,7 +105,10 @@ function scr_itemuse(arg0)
             global.interact = 6;
             
             with (obj_darkcontroller)
+            {
                 charcon = 0;
+                deschaver = 0;
+            }
             
             global.menuno = -1;
             charcon = 0;
@@ -1008,7 +1011,10 @@ function scr_itemuse(arg0)
         
         case 301:
             with (obj_darkcontroller)
+            {
                 charcon = 0;
+                deschaver = 0;
+            }
             
             global.menuno = -1;
             charcon = 0;
@@ -1082,7 +1088,10 @@ function scr_itemuse(arg0)
         
         case 324:
             with (obj_darkcontroller)
+            {
                 charcon = 0;
+                deschaver = 0;
+            }
             
             global.menuno = -1;
             charcon = 0;
@@ -1093,7 +1102,10 @@ function scr_itemuse(arg0)
         
         case 333:
             with (obj_darkcontroller)
+            {
                 charcon = 0;
+                deschaver = 0;
+            }
             
             global.menuno = -1;
             charcon = 0;

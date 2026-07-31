@@ -316,7 +316,7 @@ function scr_load(type = global.bettersaves_save_types.normal)
         }
     }
 
-    if (global.flag[1569] == 1 && global.flag[1915] == 0)
+    if (global.flag[852] == 1 && global.flag[1915] == 0)
     {
         global.flag[1915] = 1;
         global.mag[2] += 4;
