@@ -121,7 +121,7 @@ function scr_get_secret_boss_flag(arg0)
             break;
         
         case 4:
-            fought_flag = 1629;
+            fought_flag = 852;
             break;
         
         default:

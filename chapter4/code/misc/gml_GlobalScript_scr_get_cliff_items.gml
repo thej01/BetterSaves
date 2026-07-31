@@ -47,6 +47,9 @@ function scr_get_cliff_items()
         var item_type = boss_item_data[0];
         var item_id = boss_item_data[1];
         var have_item = scr_has_boss_item("weapon", item_id) || scr_has_boss_item("armor", item_id);
+
+        if (boss_chapter == 3)
+            have_item = scr_has_boss_item("weapon", item_id);
         
         if (!have_item)
             pending_items[array_length(pending_items)] = boss_item_data;
