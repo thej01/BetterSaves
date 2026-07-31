@@ -73,3 +73,31 @@ if (os_type == os_windows || os_type == os_linux || os_type == os_macosx)
         }
     }
 }
+
+if (scr_is_switch_os() && is_connecting_controller == 0)
+{
+    for (var i = 0; i < gamepad_get_device_count(); i++)
+    {
+        if (gamepad_is_connected(i) && i != gamepad_id)
+        {
+            if (gamepad_button_check(i, gp_face1) || gamepad_button_check(i, gp_face2) || gamepad_button_check(i, gp_face3) || gamepad_button_check(i, gp_face4) || gamepad_button_check(i, gp_padd) || gamepad_button_check(i, gp_padr) || gamepad_button_check(i, gp_padu) || gamepad_button_check(i, gp_padl) || abs(gamepad_axis_value(i, gp_axislh)) > 0.8 || abs(gamepad_axis_value(i, gp_axislv)) > 0.8)
+            {
+                if (switch_controller_support_show() == 0)
+                {
+                    gamepad_active = 1;
+                    alarm[0] = 1;
+                    gamepad_id = switch_controller_support_get_selected_id();
+                }
+                else
+                {
+                    gamepad_active = 0;
+                    alarm[0] = 1;
+                    global.gamepad_type = "N/A";
+                    exit;
+                }
+                
+                break;
+            }
+        }
+    }
+}
